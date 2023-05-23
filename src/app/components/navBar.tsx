@@ -1,9 +1,8 @@
 import Link from 'next/link';
-
 export default function NavBar() {
   return (
     <div>      
-      <nav className="w-full bg-gray-800 shadow">
+      <nav className="w-full shadow" style={{ backgroundColor: '#3c6e71' }}>
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -12,7 +11,7 @@ export default function NavBar() {
               </a>
               <div className="md:hidden">
                 <button
-                  className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"                  
+                  className="p-2 text-Cian rounded-md outline-none focus:border-Cian focus:border"                  
                 >
                   {
                     <svg
@@ -39,7 +38,7 @@ export default function NavBar() {
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 `}
             >
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-white">
+                <li className="text-white ">
                   <Link href="/">
                     Home
                   </Link>
@@ -52,11 +51,6 @@ export default function NavBar() {
                 <li className="text-white">
                   <Link href="/tracking">
                     Tracking
-                  </Link>
-                </li>
-                <li className="text-white">
-                  <Link href="/billing">
-                    Billing                    
                   </Link>
                 </li>
                 <li className="text-white">
