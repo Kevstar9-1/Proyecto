@@ -24,7 +24,7 @@ const Home: React.FC = () => {
         <br />
         <br />
         <div><p className="text-xl mb-8">There you can put your code and receive persobal and available information
-          of your package. Billing information, personal or identidy information... </p></div>
+          of your package. Billing information, personal or identify information... </p></div>
       </div>
 
       <Footer />
