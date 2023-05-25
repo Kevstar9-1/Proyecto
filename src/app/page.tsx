@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './components/footer';
 
 const Home: React.FC = () => {
   return (
@@ -19,7 +20,11 @@ const Home: React.FC = () => {
         </div>
         <br />
       </div>
+      <div>
+        <Footer/>
+      </div>
     </div>
+     
   )
 };
 
