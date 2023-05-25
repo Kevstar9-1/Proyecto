@@ -14,9 +14,12 @@ const Home: React.FC = () => {
         <input
           type="text"
           className="border border-gray-500 px-4 py-2 rounded-md"
-          placeholder="Enter the code number"
+          placeholder="Enter your code number"
         />
-        <button className="bg-blue-500 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded mt-4">
+        <button
+          className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
+          style={{ backgroundColor: "#3c6e71" }}
+        >
           Track
         </button>
         <br />

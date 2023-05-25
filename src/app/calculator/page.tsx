@@ -42,7 +42,10 @@ const Home: React.FC = () => {
           placeholder="Height"
         />
         <br/>
-        <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <button
+          className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
+          style={{ backgroundColor: "#3c6e71" }}
+        >
           Calculate
         </button>
       </div>
