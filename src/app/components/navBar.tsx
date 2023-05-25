@@ -1,7 +1,7 @@
 import Link from 'next/link';
 export default function NavBar() {
   return (
-    <div>      
+    <div>
       <nav className="w-full shadow" style={{ backgroundColor: '#3c6e71' }}>
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
@@ -11,7 +11,7 @@ export default function NavBar() {
               </a>
               <div className="md:hidden">
                 <button
-                  className="p-2 text-Cian rounded-md outline-none focus:border-Cian focus:border"                  
+                  className="p-2 text-Cian rounded-md outline-none focus:border-Cian focus:border"
                 >
                   {
                     <svg
@@ -42,10 +42,10 @@ export default function NavBar() {
                   <Link href="/">
                     Home
                   </Link>
-                </li>                
+                </li>
                 <li className="text-white">
                   <Link href="/calculator">
-                    Calculator
+                    Quote your article
                   </Link>
                 </li>
                 <li className="text-white">
@@ -55,14 +55,14 @@ export default function NavBar() {
                 </li>
                 <li className="text-white">
                   <Link href="/reports">
-                    Reports                    
+                    Reports
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-      </nav>      
+      </nav>
     </div>
   );
 }
