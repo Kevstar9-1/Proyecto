@@ -6,9 +6,9 @@ export default function NavBar() {
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
-              <a href="#">
+              <a href="/">
               <h2 className="inline-block mr-4 text-2xl text-white font-bold">ExpressWay Logistics</h2>
-              <img src="./ima/LaT.png" alt=" Logotipo" className="inline-block" width="40" />
+              <img src="./ima/logoprincipal.png" alt=" Logotipo" className="inline-block" width="40" />
               </a>
               <div className="md:hidden">
                 <button

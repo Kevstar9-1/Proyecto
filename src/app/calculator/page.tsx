@@ -9,7 +9,7 @@ const Home: React.FC = () => {
         <h1 className="text-5xl font-bold mb-4">Quote</h1>
         <p className="text-xl mb-8">In this section you can quote the shipping of the item </p>
         <div className="cotizar">
-          <img src="./ima/cotizar.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
+          <img src="./ima/cotizacion.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
         </div>
         <br />
         <input

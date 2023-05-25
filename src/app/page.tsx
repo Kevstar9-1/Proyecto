@@ -6,7 +6,7 @@ const Home: React.FC = () => {
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
       <div className="max-w-4xl mx-auto text-center">
       <div className="imagepaquete">
-          <img src="./ima/frente-del-autobus.png" alt="logo2" width="50" style={{ margin: '0 auto' }} />
+          <img src="./ima/autobus.png" alt="logo2" width="30" style={{ margin: '0 auto' }} />
         </div>
         <br />
         <div>
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
                       We are very happy to have you.</p>
         </div>
         <div className="imagepaquete">
-          <img src="./ima/paquete.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
+          <img src="./ima/paquetecolor.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
         </div>
         <br />
       </div>
