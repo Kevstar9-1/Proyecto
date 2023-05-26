@@ -1,5 +1,4 @@
 import Footer from "../components/footer";
-
 const Home: React.FC = () => {
   return (
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
