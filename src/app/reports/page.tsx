@@ -23,13 +23,44 @@ const Home: React.FC = () => {
         </button>
         <br />
         <br />
-        <div><p className="text-xl mb-8">There you can put your code and receive personal and available information
-          of your package. Billing information, personal or identify information, print your report... </p></div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Billing Total:</h2>
+          <p className="text-xl">Total amount: $XXXX</p>
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">QR Code:</h2>
+          <img src="./ima/codigo-qr.png" alt="qr-code" width="200" style={{ margin: '0 auto' }} />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Sender Information:</h2>
+          <p className="text-xl">Name: Kevin Hernandez</p>
+          <p className="text-xl">Address: San Jorge, Paso Canoas</p>
+          <p className="text-xl">Phone: 8634-2782</p>
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Recipient Information:</h2>
+          <p className="text-xl">Name: Jose Castro</p>
+          <p className="text-xl">Address: Salas Vindas, Ciudad Neily</p>
+          <p className="text-xl">Phone: 8558-1077</p>
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Invoice Details:</h2>
+          <p className="text-xl">Date: XX/XX/XXXX</p>
+          <p className="text-xl">Invoice Number: XXXXXXX</p>
+          <p className="text-xl">Shipping Details: There you can apreciate your shipping details...</p>
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold mb-4">Shipping Details:</h2>
+          <p className="text-xl">Product: Package sended</p>
+          <p className="text-xl">Quantity: X</p>
+          <p className="text-xl">Weight: XX kg</p>
+          <p className="text-xl">Dimensions: XX" x XX" x XX"</p>
+        </div>
       </div>
 
       <Footer />
     </div>
-  );
-};
-
-export default Home;
+    );
+  };
+  
+  export default Home;
