@@ -1,5 +1,4 @@
 import Footer from "../components/footer";
-
 const Home: React.FC = () => {
   return (
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
@@ -60,7 +59,14 @@ const Home: React.FC = () => {
 
       <Footer />
     </div>
+<<<<<<< HEAD
     );
   };
   
   export default Home;
+=======
+  );
+};
+
+export default Home;
+>>>>>>> b0e3504d3a2b15e5394df367667b4ebf09ff8e2c
