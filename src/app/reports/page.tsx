@@ -23,8 +23,8 @@ const Home: React.FC = () => {
         </button>
         <br />
         <br />
-        <div><p className="text-xl mb-8">There you can put your code and receive persobal and available information
-          of your package. Billing information, personal or identify information... </p></div>
+        <div><p className="text-xl mb-8">There you can put your code and receive personal and available information
+          of your package. Billing information, personal or identify information, print your report... </p></div>
       </div>
 
       <Footer />

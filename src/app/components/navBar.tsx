@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 export default function NavBar() {
   return (
     <div>
@@ -7,8 +8,8 @@ export default function NavBar() {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <a href="/">
-              <h2 className="inline-block mr-4 text-2xl text-white font-bold">ExpressWay Logistics</h2>
-              <img src="./ima/logoprincipal.png" alt=" Logotipo" className="inline-block" width="40" />
+                <h2 className="inline-block mr-4 text-2xl text-white font-bold">ExpressWay Logistics</h2>
+                <img src="./ima/logoprincipal.png" alt=" Logotipo" className="inline-block" width="40" />
               </a>
               <div className="md:hidden">
                 <button
@@ -41,22 +42,22 @@ export default function NavBar() {
               <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                 <li className="text-white ">
                   <Link href="/">
-                    Home
+                    <strong>Home</strong>
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/calculator">
-                    Quote your article
+                    <strong>Quote your article</strong>
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/tracking">
-                    Tracking
+                    <strong>Tracking</strong>
                   </Link>
                 </li>
                 <li className="text-white">
                   <Link href="/reports">
-                    Reports
+                    <strong>Reports</strong>
                   </Link>
                 </li>
               </ul>
