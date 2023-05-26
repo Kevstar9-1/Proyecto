@@ -23,44 +23,10 @@ const Home: React.FC = () => {
         </button>
         <br />
         <br />
-        <table className="mx-auto text-left">
+        <table className="mx-auto text-left border-collapse border border-black">
           <tbody>
             <tr>
-              <td>
-                <h2 className="text-3xl font-bold mb-4">Billing Total:</h2>
-                <p className="text-xl">Total amount: $XXXX</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <h2 className="text-3xl font-bold mb-4">Sender Information:</h2>
-                <p className="text-xl">Name: Kevin Hernandez</p>
-                <p className="text-xl">Address: San Jorge, Paso Canoas</p>
-                <p className="text-xl">Phone: 8634-2782</p>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}></td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <h2 className="text-3xl font-bold mb-4">Recipient Information:</h2>
-                <p className="text-xl">Name: Jose Castro</p>
-                <p className="text-xl">Address: Salas Vindas, Ciudad Neily</p>
-                <p className="text-xl">Phone: 8558-1077</p>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <h2 className="text-3xl font-bold mb-4">Invoice Details:</h2>
-                <p className="text-xl">Date: XX/XX/XXXX</p>
-                <p className="text-xl">Invoice Number: XXXXXXX</p>
-                <p className="text-xl">Shipping Details: There you can appreciate your shipping details...</p>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
+              <td colSpan={2} className="border border-black">
                 <h2 className="text-3xl font-bold mb-4">Shipping Details:</h2>
                 <p className="text-xl">Product: Package sent</p>
                 <p className="text-xl">Quantity: X</p>
@@ -69,7 +35,31 @@ const Home: React.FC = () => {
               </td>
             </tr>
             <tr>
-              <td colSpan={2}>
+              <td colSpan={2} className="border border-black">
+                <h2 className="text-3xl font-bold mb-4">Invoice Details:</h2>
+                <p className="text-xl">Date: XX/XX/XXXX</p>
+                <p className="text-xl">Invoice Number: XXXXXXX</p>
+                <p className="text-xl">Shipping Details: There you can appreciate your shipping details...</p>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} className="border border-black">
+                <h2 className="text-3xl font-bold mb-4">Recipient Information:</h2>
+                <p className="text-xl">Name: Jose Castro</p>
+                <p className="text-xl">Address: Salas Vindas, Ciudad Neily</p>
+                <p className="text-xl">Phone: 8558-1077</p>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} className="border border-black">
+                <h2 className="text-3xl font-bold mb-4">Sender Information:</h2>
+                <p className="text-xl">Name: Kevin Hernandez</p>
+                <p className="text-xl">Address: San Jorge, Paso Canoas</p>
+                <p className="text-xl">Phone: 8634-2782</p>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2} className="border border-black">
                 <h2 className="text-3xl font-bold mb-4">QR Code:</h2>
                 <img src="./ima/codigo-qr.png" alt="qr-code" width="200" style={{ margin: '0 auto' }} />
               </td>
