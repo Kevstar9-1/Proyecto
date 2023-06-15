@@ -1,4 +1,5 @@
 import Footer from "../components/footer";
+import React, { useState } from 'react';
 
 const Home: React.FC = () => {
   return (
