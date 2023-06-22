@@ -31,6 +31,7 @@ const Home: React.FC = () => {
           value={origin}
           onChange={(e) => setOrigin(e.target.value)}
         />
+        <br />
         <input
           type="text"
           className="border border-gray-500 px-4 py-2 rounded-md mb-4"
@@ -38,6 +39,7 @@ const Home: React.FC = () => {
           value={destine}
           onChange={(e) => setDestine(e.target.value)}
         />
+        <br />
         <input
           type="text"
           className="border border-gray-500 px-4 py-2 rounded-md mb-4"
