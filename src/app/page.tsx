@@ -6,7 +6,6 @@ const Home: React.FC = () => {
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
       <div className="max-w-4xl mx-auto text-center">
       <div className="imagepaquete">
-          <img src="./ima/autobus.png" alt="logo2" width="30" style={{ margin: '0 auto' }} />
         </div>
         <br />
         <div>
