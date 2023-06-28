@@ -10,7 +10,7 @@ const firebaseConfig = {
   appId: process.env.NEXTJS_FIREBASE_APPID,
 };
 
-
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
