@@ -15,7 +15,13 @@ interface QuoteData {
   lastName: string;
   phone: string;
   email: string;
+  postalcode: string;
   address: string;
+  firstNamed: string;
+  lastName2: string;
+  phone2: string;
+  email2: string;
+  address2: string;
 }
 
 const Home: React.FC = () => {
@@ -33,7 +39,13 @@ const Home: React.FC = () => {
     lastName: '',
     phone: '',
     email: '',
-    address: ''
+    address: '',
+    postalcode: '',
+    firstNamed: '',
+    lastName2: '',
+    phone2: '',
+    email2: '',
+    address2: ''
   });
 
   const handleCalculate = () => {
@@ -48,23 +60,20 @@ const Home: React.FC = () => {
       return;
     }
 
-    // Realizar cálculos
     const volume = parseFloat(quoteData.length) * parseFloat(quoteData.width) * parseFloat(quoteData.height);
     let totalPrice = 0;
-
-    if (volume <= 100) {
-      totalPrice = volume * 0.2;
-    } else if (volume <= 200) {
-      totalPrice = volume * 0.8;
-    } else if (volume <= 300) {
+    if (volume <= 1000) {
+      totalPrice = 2750; // Precio base de 2500 colones para volúmenes menores o iguales a 1000
+    } else if (volume <= 2000) {
+      totalPrice = volume * 0.80;
+    } else if (volume <= 3000) {
       totalPrice = volume * 1.2;
     } else {
       totalPrice = volume * 1.5;
     }
-    
     setQuoteData((prevData) => ({
       ...prevData,
-      totalPrice: totalPrice.toFixed(2),
+      totalPrice: totalPrice.toFixed(),
     }));
     setShowTable(true);
   };
@@ -79,11 +88,19 @@ const Home: React.FC = () => {
       height: '',
       totalPrice: '',
       wantsShipping: false,
+      //r
       firstName: '',
       lastName: '',
       phone: '',
       email: '',
-      address: ''
+      address: '',
+      postalcode: '',
+      //d
+      firstNamed: '',
+      lastName2: '',
+      phone2: '',
+      email2: '',
+      address2: ''
     });
     setShowTable(false);
   };
@@ -223,6 +240,7 @@ const Home: React.FC = () => {
 
             {showTable && quoteData.wantsShipping && (
               <div className="mt-4">
+                <p>Recipient Information</p>
                 <input
                   type="text"
                   className="border border-gray-500 px-4 py-2 rounded-md mb-4"
@@ -258,14 +276,67 @@ const Home: React.FC = () => {
                 <input
                   type="text"
                   className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Postal Code"
+                  value={quoteData.postalcode}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, postalcode: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
                   placeholder="Address"
                   value={quoteData.address}
                   onChange={(e) => setQuoteData((prevData) => ({ ...prevData, address: e.target.value }))}
                 />
                 <br />
+              </div>
+            )}
+            {showTable && quoteData.wantsShipping && (
+              <div className="mt-4">
+                <p>Addressee Information</p>
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="First Name"
+                  value={quoteData.firstNamed}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, firstNamed: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Last Name"
+                  value={quoteData.lastName2}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, lastName2: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Phone"
+                  value={quoteData.phone2}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, phone2: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Email"
+                  value={quoteData.email2}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, email2: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Address"
+                  value={quoteData.address2}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, address2: e.target.value }))}
+                />
+                <br />
                 <button
                   className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
-                  style={{ backgroundColor: '#3c6e71' }}>Send article
+                  style={{ backgroundColor: '#3c6e71' }}>Shipping
                 </button>
               </div>
             )}
