@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Footer from '../components/footer';
-
+import { generateTrackingCode } from '../components/generatecode';
 interface QuoteData {
   origin: string;
   destine: string;
@@ -119,6 +119,11 @@ const Home: React.FC = () => {
       firstName: '',
       lastName: '',
     }));
+  };
+
+  const handleShipping = () => {
+    const trackingCode = generateTrackingCode();
+    console.log('Shipping:', trackingCode);
   };
 
   return (
@@ -336,11 +341,11 @@ const Home: React.FC = () => {
                 <br />
                 <button
                   className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
-                  style={{ backgroundColor: '#3c6e71' }}>Shipping
+                  style={{ backgroundColor: '#3c6e71' }}
+                  onClick={handleShipping}>Shipping
                 </button>
               </div>
             )}
-
           </div>
         )}
       </div>
