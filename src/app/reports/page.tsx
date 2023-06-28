@@ -1,7 +1,4 @@
-"use client"
 import Footer from "../components/footer";
-import React, { useState } from 'react';
-
 const Home: React.FC = () => {
   return (
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
