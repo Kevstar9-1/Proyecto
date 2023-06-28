@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Footer from '../components/footer';
 import { generateTrackingCode } from '../components/generatecode';
+
 interface QuoteData {
   origin: string;
   destine: string;
@@ -346,7 +347,7 @@ const Home: React.FC = () => {
                 </button>
               </div>
             )}
-          </div>
+          </div> 
         )}
       </div>
       <Footer></Footer>
