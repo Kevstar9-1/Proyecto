@@ -61,7 +61,7 @@ const Home: React.FC = () => {
     } else {
       totalPrice = volume * 1.5;
     }
-
+    
     setQuoteData((prevData) => ({
       ...prevData,
       totalPrice: totalPrice.toFixed(2),
