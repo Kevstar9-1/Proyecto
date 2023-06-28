@@ -18,11 +18,13 @@ interface QuoteData {
   email: string;
   postalcode: string;
   address: string;
+  description: string;
   firstNamed: string;
   lastName2: string;
   phone2: string;
   email2: string;
   address2: string;
+  code: string;
 }
 
 const Home: React.FC = () => {
@@ -42,11 +44,13 @@ const Home: React.FC = () => {
     email: '',
     address: '',
     postalcode: '',
+    description:'',
     firstNamed: '',
     lastName2: '',
     phone2: '',
     email2: '',
-    address2: ''
+    address2: '',
+    code: ''
   });
 
   const handleCalculate = () => {
@@ -96,12 +100,14 @@ const Home: React.FC = () => {
       email: '',
       address: '',
       postalcode: '',
+      description:'',
       //d
       firstNamed: '',
       lastName2: '',
       phone2: '',
       email2: '',
-      address2: ''
+      address2: '',
+      code: ''
     });
     setShowTable(false);
   };
@@ -124,7 +130,10 @@ const Home: React.FC = () => {
 
   const handleShipping = () => {
     const trackingCode = generateTrackingCode();
-    console.log('Shipping:', trackingCode);
+    setQuoteData((prevData) => ({
+      ...prevData,
+      code: trackingCode,
+    }));
   };
 
   return (
@@ -290,6 +299,14 @@ const Home: React.FC = () => {
                 <input
                   type="text"
                   className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Description Article"
+                  value={quoteData.description}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, description: e.target.value }))}
+                />
+                <br />
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
                   placeholder="Address"
                   value={quoteData.address}
                   onChange={(e) => setQuoteData((prevData) => ({ ...prevData, address: e.target.value }))}
@@ -345,6 +362,15 @@ const Home: React.FC = () => {
                   style={{ backgroundColor: '#3c6e71' }}
                   onClick={handleShipping}>Shipping
                 </button>
+                <br />
+                <p>Tracking code</p>
+                <input
+                  type="text"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  placeholder="Code"
+                  value={quoteData.code}
+                  onChange={(e) => setQuoteData((prevData) => ({ ...prevData, code: e.target.value }))}
+                />
               </div>
             )}
           </div> 
