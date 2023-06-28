@@ -363,7 +363,7 @@ const Home: React.FC = () => {
                   onClick={handleShipping}>Shipping
                 </button>
                 <br />
-                <p>Tracking code</p>
+                <p>Tracking code:</p>
                 <input
                   type="text"
                   className="border border-gray-500 px-4 py-2 rounded-md mb-4"
