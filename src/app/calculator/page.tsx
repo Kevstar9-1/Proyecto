@@ -363,10 +363,11 @@ const Home: React.FC = () => {
                   onClick={handleShipping}>Shipping
                 </button>
                 <br />
+                <br />
                 <p>Tracking code:</p>
                 <input
                   type="text"
-                  className="border border-gray-500 px-4 py-2 rounded-md mb-4"
+                  className="border border-gray-500 px-4 py-2 rounded-md mb-4 flex-justify-center"
                   placeholder="Code"
                   value={quoteData.code}
                   onChange={(e) => setQuoteData((prevData) => ({ ...prevData, code: e.target.value }))}

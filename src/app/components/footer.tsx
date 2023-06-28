@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-300 text-gray-600 py-4 text-center">
       <p>Contact information: soportlt@gmail.com</p>
-      <p>Our social media</p>
+      <p>Social media</p>
       <div className="flex items-center justify-center">
         <img src="./ima/facebook.jpeg" alt="Facebook" className="w-5 h-5" /> 
         <img src="./ima/whatsapp.png" alt="WhatsApp" className="w-5 h-5" />
