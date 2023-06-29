@@ -3,11 +3,15 @@ import Footer from '../components/footer';
 import React, { useState } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
+interface TrackingData {
+  origin: string;
+  destination: string;
+  description: string;
+}
 
 const Home: React.FC = () => {
-
   const [trackingCode, setTrackingCode] = useState<string>('');
-  const [trackingData, setTrackingData] = useState<any>(null);
+  const [trackingData, setTrackingData] = useState<TrackingData | null>(null);
 
   const handleTrackButtonClick = () => {
     const db = getDatabase();
@@ -36,7 +40,6 @@ const Home: React.FC = () => {
           value={trackingCode}
           onChange={(e) => setTrackingCode(e.target.value)}
         />
-
         <button
           className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
           style={{ backgroundColor: "#3c6e71" }}
@@ -44,29 +47,27 @@ const Home: React.FC = () => {
         >
           Track
         </button>
-
         <br />
         <br />
-        <div><p className="text-xl mb-8">In this section is intended that when the button is
-          activated the information corresponding to the article sent will be displayed.
-          For example the origin, destination, description</p></div>
+        <div>
+          <p className="text-xl mb-8">
+            In this section, when the button is activated, the corresponding information of the
+            sent article will be displayed. For example, the origin, destination, and description.
+          </p>
+        </div>
       </div>
-
       <div>
         {trackingData && (
           <>
             <p>Origin: {trackingData.origin}</p>
             <p>Destination: {trackingData.destination}</p>
             <p>Description: {trackingData.description}</p>
-            {/* Agrega aquí otros datos relacionados al seguimiento */}
           </>
         )}
       </div>
-
       <Footer />
     </div>
   );
 };
 
 export default Home;
-

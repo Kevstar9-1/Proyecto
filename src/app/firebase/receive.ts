@@ -18,11 +18,11 @@ export const fetchFirebaseData = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "destinatario"));
     const data = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
+      id: doc.id,...doc.data(),
     }));
     console.log("Datos recibidos de Firebase:", data);
     return data;
+    
   } catch (error) {
     console.error("Error al recibir datos de Firebase:", error);
   }
