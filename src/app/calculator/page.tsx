@@ -144,7 +144,6 @@ const Home: React.FC = () => {
       lastName: '',
     }));
   };
-
   const handleShipping = async () => {
     const trackingCode = generateTrackingCode();
     setQuoteData((prevData) => ({

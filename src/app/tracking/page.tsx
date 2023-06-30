@@ -8,6 +8,7 @@ interface TrackingData {
   origin: string;
   destine: string;
   description: string;
+  status: string;
 }
 
 const firebaseConfig = {
@@ -91,6 +92,7 @@ const Home: React.FC = () => {
               <p className="tracking-label">Origin: {trackingData.origin}</p>
               <p className="tracking-label">Destine: {trackingData.destine}</p>
               <p className="tracking-label">Description: {trackingData.description}</p>
+              <p className="tracking-label">Status: {trackingData.status}</p>
             </div>
           </div>
         )}
