@@ -71,40 +71,26 @@ const Home: React.FC = () => {
           value={trackingCode}
           onChange={(e) => setTrackingCode(e.target.value)}
         />
+        <br />
         <button
           className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
           style={{ backgroundColor: "#3c6e71", marginRight: '10px' }}
-          onClick={handleTrackButtonClick}
-        >
-          Track
+          onClick={handleTrackButtonClick}>Track
         </button>
+        <br />
         <button
           className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-4"
-          onClick={handleResetClick}
-        >
-          Reset
+          onClick={handleResetClick}>Reset
         </button>
         <br />
-        <br />
-        <div>
-          <p className="text-xl mb-8">
-            In this section, when the button is activated, the corresponding information of the
-            sent article will be displayed. For example, the origin, destination, and description.
-          </p>
-        </div>
       </div>
       <div>
         {trackingData && (
           <div className="tracking-info">
-            <div className="tracking-column">
-              <p className="tracking-label">Origen:</p>
-              <p className="tracking-label">Destino:</p>
-              <p className="tracking-label">Descripción:</p>
-            </div>
-            <div className="tracking-column">
-              <p className="tracking-value">{trackingData.origin}</p>
-              <p className="tracking-value">{trackingData.destine}</p>
-              <p className="tracking-value">{trackingData.description}</p>
+            <div className="tracking-label">
+              <p className="tracking-label">Origen: {trackingData.origin}</p>
+              <p className="tracking-label">Destino: {trackingData.destine}</p>
+              <p className="tracking-label">DescripciÃ³n: {trackingData.description}</p>
             </div>
           </div>
         )}

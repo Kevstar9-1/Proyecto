@@ -28,6 +28,7 @@ interface QuoteData {
   email2: string;
   address2: string;
   code: string;
+  status: string;
 }
 const firebaseConfig = {
   apiKey: "AIzaSyAkoINKylXn-T0Q7Pjjk1Vsuo5W3tDVFfE2",
@@ -63,7 +64,8 @@ const Home: React.FC = () => {
     phone2: '',
     email2: '',
     address2: '',
-    code: ''
+    code: '',
+    status: ''
   });
 
   const handleCalculate = () => {
@@ -92,6 +94,7 @@ const Home: React.FC = () => {
     setQuoteData((prevData) => ({
       ...prevData,
       totalPrice: totalPrice.toFixed(),
+      status: '' 
     }));
     setShowTable(true);
   };
@@ -120,7 +123,8 @@ const Home: React.FC = () => {
       phone2: '',
       email2: '',
       address2: '',
-      code: ''
+      code: '',
+      status: '' 
     });
     setShowTable(false);
   };
@@ -146,6 +150,7 @@ const Home: React.FC = () => {
     setQuoteData((prevData) => ({
       ...prevData,
       code: trackingCode,
+      status: 'Sent'
     }));
   };
 
