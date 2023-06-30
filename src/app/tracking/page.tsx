@@ -88,9 +88,9 @@ const Home: React.FC = () => {
         {trackingData && (
           <div className="tracking-info">
             <div className="tracking-label">
-              <p className="tracking-label">Origen: {trackingData.origin}</p>
-              <p className="tracking-label">Destino: {trackingData.destine}</p>
-              <p className="tracking-label">DescripciÃ³n: {trackingData.description}</p>
+              <p className="tracking-label">Origin: {trackingData.origin}</p>
+              <p className="tracking-label">Destine: {trackingData.destine}</p>
+              <p className="tracking-label">Description: {trackingData.description}</p>
             </div>
           </div>
         )}
