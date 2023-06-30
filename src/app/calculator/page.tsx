@@ -30,13 +30,12 @@ interface QuoteData {
   code: string;
 }
 const firebaseConfig = {
-  apiKey: "AIzaSyCo22Wqa2Yu4fxlWndeTCofJf9XKJFjXgg",
-  authDomain: "encomiendas-prueba.firebaseapp.com",
-  projectId: "encomiendas-prueba",
-  storageBucket: "encomiendas-prueba.appspot.com",
-  messagingSenderId: "694343250813",
-  appId: "1:694343250813:web:98a9667c5390c437625214",
-  measurementId: "G-9BGNDHRRBL"
+  apiKey: "AIzaSyAkoINKylXn-T0Q7Pjjk1Vsuo5W3tDVFfE2",
+  authDomain: "expreog-edf05.firebaseapp.com",
+  projectId: "expreog-edf05",
+  storageBucket: "expreog-edf05.appspot.com",
+  messagingSenderId: "662649012566",
+  appId: "1:662649012566:web:56fddd55495356374f16f7"
 };
 
 const Home: React.FC = () => {
