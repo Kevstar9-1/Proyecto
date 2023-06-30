@@ -11,13 +11,12 @@ interface TrackingData {
 }
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCo22Wqa2Yu4fxlWndeTCofJf9XKJFjXgg",
-  authDomain: "encomiendas-prueba.firebaseapp.com",
-  projectId: "encomiendas-prueba",
-  storageBucket: "encomiendas-prueba.appspot.com",
-  messagingSenderId: "694343250813",
-  appId: "1:694343250813:web:98a9667c5390c437625214",
-  measurementId: "G-9BGNDHRRBL"
+  apiKey: "AIzaSyAkoINKylXn-T0Q7Pjjk1Vsuo5W3tDVFfE2",
+  authDomain: "expreog-edf05.firebaseapp.com",
+  projectId: "expreog-edf05",
+  storageBucket: "expreog-edf05.appspot.com",
+  messagingSenderId: "662649012566",
+  appId: "1:662649012566:web:56fddd55495356374f16f7"
 };
 
 const Home: React.FC = () => {
@@ -25,11 +24,12 @@ const Home: React.FC = () => {
   const db = getFirestore(app);
   const [trackingCode, setTrackingCode] = useState<string>('');
   const [trackingData, setTrackingData] = useState<TrackingData | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleTrackButtonClick = async () => {
     const destinatarioRef = collection(db, 'destinatario');
     const q = query(destinatarioRef, where('code', '==', trackingCode));
-    
+
     try {
       const querySnapshot = await getDocs(q);
 
@@ -38,59 +38,84 @@ const Home: React.FC = () => {
           const data = doc.data() as TrackingData;
           setTrackingData(data);
         });
+        setErrorMessage(null);
       } else {
         setTrackingData(null);
-        console.log('No se encontraron resultados.');
+        setErrorMessage('No se encontraron resultados.');
       }
     } catch (error) {
-      console.log('Error al obtener los datos:', error);
+      setErrorMessage('Error al obtener los datos: ' + error);
     }
+  };
+
+  const handleResetClick = () => {
+    setTrackingCode('');
+    setTrackingData(null);
+    setErrorMessage(null);
   };
 
   return (
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
-    <div className="max-w-4xl mx-auto text-center">
-      <div className="entrega">
-        <img src="./ima/seguimiento.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="entrega">
+          <img src="./ima/seguimiento.png" alt="logo" width="200" style={{ margin: '0 auto' }} />
+        </div>
+        <br />
+        <h1 className="text-5xl font-bold mb-4">Tracking</h1>
+        <p className="text-xl mb-8">In this section you can view the tracking of the package</p>
+        <input
+          type="text"
+          id="trackingCodeInput"
+          className="border border-gray-500 px-4 py-2 rounded-md"
+          placeholder="Enter your code number"
+          value={trackingCode}
+          onChange={(e) => setTrackingCode(e.target.value)}
+        />
+        <button
+          className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
+          style={{ backgroundColor: "#3c6e71", marginRight: '10px' }}
+          onClick={handleTrackButtonClick}
+        >
+          Track
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-4"
+          onClick={handleResetClick}
+        >
+          Reset
+        </button>
+        <br />
+        <br />
+        <div>
+          <p className="text-xl mb-8">
+            In this section, when the button is activated, the corresponding information of the
+            sent article will be displayed. For example, the origin, destination, and description.
+          </p>
+        </div>
       </div>
-      <br />
-      <h1 className="text-5xl font-bold mb-4">Tracking</h1>
-      <p className="text-xl mb-8">In this section you can view the tracking of the package</p>
-      <input
-        type="text"
-        id="trackingCodeInput"
-        className="border border-gray-500 px-4 py-2 rounded-md"
-        placeholder="Enter your code number"
-        value={trackingCode}
-        onChange={(e) => setTrackingCode(e.target.value)}
-      />
-      <button
-        className="bg-custom-color hover:bg-custom-color-dark text-white font-bold py-2 px-4 rounded mt-4"
-        style={{ backgroundColor: "#3c6e71" }}
-        onClick={handleTrackButtonClick}
-      >
-        Track
-      </button>
-      <br />
-      <br />
       <div>
-        <p className="text-xl mb-8">
-          In this section, when the button is activated, the corresponding information of the
-          sent article will be displayed. For example, the origin, destination, and description.
-        </p>
+        {trackingData && (
+          <div className="tracking-info">
+            <div className="tracking-column">
+              <p className="tracking-label">Origen:</p>
+              <p className="tracking-label">Destino:</p>
+              <p className="tracking-label">Descripción:</p>
+            </div>
+            <div className="tracking-column">
+              <p className="tracking-value">{trackingData.origin}</p>
+              <p className="tracking-value">{trackingData.destine}</p>
+              <p className="tracking-value">{trackingData.description}</p>
+            </div>
+          </div>
+        )}
+        {errorMessage && (
+          <div className="error-message">
+            <p>{errorMessage}</p>
+          </div>
+        )}
       </div>
+      <Footer />
     </div>
-    <div>
-      {trackingData && (
-        <>
-          <p>Origin: {trackingData.origin}</p>
-          <p>Destination: {trackingData.destine}</p>
-          <p>Description: {trackingData.description}</p>
-        </>
-      )}
-    </div>
-    <Footer />
-  </div>
   );
 };
 
