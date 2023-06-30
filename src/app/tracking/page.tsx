@@ -2,14 +2,25 @@
 import Footer from '../components/footer';
 import React, { useState } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
 interface TrackingData {
   origin: string;
   destination: string;
   description: string;
 }
-
+const firebaseConfig = {
+  apiKey: "AIzaSyAkoINKylXn-T0Q7Pjjk1Vsuo5W3tDVFfE2",
+  authDomain: "expreog-edf05.firebaseapp.com",
+  projectId: "expreog-edf05",
+  storageBucket: "expreog-edf05.appspot.com",
+  messagingSenderId: "662649012566",
+  appId: "1:662649012566:web:56fddd55495356374f16f7"
+};
 const Home: React.FC = () => {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
   const [trackingCode, setTrackingCode] = useState<string>('');
   const [trackingData, setTrackingData] = useState<TrackingData | null>(null);
 

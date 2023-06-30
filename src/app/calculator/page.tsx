@@ -1,7 +1,10 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '../components/footer';
 import { generateTrackingCode } from '../components/generatecode';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { addDoc, collection } from 'firebase/firestore';
 
 interface QuoteData {
   origin: string;
@@ -26,8 +29,18 @@ interface QuoteData {
   address2: string;
   code: string;
 }
+const firebaseConfig = {
+  apiKey: "AIzaSyAkoINKylXn-T0Q7Pjjk1Vsuo5W3tDVFfE2",
+  authDomain: "expreog-edf05.firebaseapp.com",
+  projectId: "expreog-edf05",
+  storageBucket: "expreog-edf05.appspot.com",
+  messagingSenderId: "662649012566",
+  appId: "1:662649012566:web:56fddd55495356374f16f7"
+};
 
 const Home: React.FC = () => {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
   const [showTable, setShowTable] = useState(false);
   const [quoteData, setQuoteData] = useState<QuoteData>({
     origin: '',
@@ -128,13 +141,28 @@ const Home: React.FC = () => {
     }));
   };
 
-  const handleShipping = () => {
+  const handleShipping = async () => {
     const trackingCode = generateTrackingCode();
     setQuoteData((prevData) => ({
       ...prevData,
       code: trackingCode,
     }));
   };
+
+  useEffect(() => {
+    const addData = async () => {
+      try {
+        await addDoc(collection(db, 'destinatario'), quoteData);
+        console.log('Datos agregados a la colección "destinatario"');
+      } catch (error) {
+        console.error('Error al agregar los datos:', error);
+      }
+    };
+
+    if (quoteData.code !== '') {
+      addData();
+    }
+  }, [quoteData.code]);
 
   return (
     <div className="bg-gray-300 text-black min-h-screen flex items-center justify-center">
